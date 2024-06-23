@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>View page</title>
+    
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/myStyle.css">
+    <link href="/css/sidebars.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  </head>
+  <body>
+    <%- include('./components/icons') %>
+
+    <main class="d-flex flex-nowrap">
+
+      <%- include('./components/sidebar', {current_page: "view"}) %>
+
+      <section class="w-100" style="overflow: auto;">
+        <%- include('./components/navbar') %>
+
+        <section class="body w-100 p-5">
+          <table class="table table-bordered">
+            <tbody>
+              <tr>
+                <th>Id</th>
+                <td><%= user._id %></td>
+              </tr>
+              <tr>
+                <th>First Name</th>
+                <td><%= user.firstName %></td>
+              </tr>
+              <tr>
+                <th>Last Name</th>
+                <td><%= user.lastName %></td>
+              </tr>
+              <tr>
+                <th>Email</th>
+                <td><%= user.email %></td>
+              </tr>
+              <tr>
+                <th>Telephone</th>
+                <td><%= user.telephone %></td>
+              </tr>
+              
+              <tr>
+                <th>Gender</th>
+                <td><%= user.gender %></td>
+              </tr>
+              <tr>
+                <th>Country</th>
+                <td><%= user.country %></td>
+              </tr>
+              <tr>
+                <th>Created on</th>
+                <td><%= moment(user.createdAt).fromNow() %></td>
+              </tr>
+              <tr>
+                <th>Last update</th>
+                <td><%= moment(user.updatedAt).fromNow() %></td>
+              </tr>
+              
+              
+              
+            </tbody>
+          </table>
+        </section>
+      </section>
+
+    </main>
+    
+    <script src="/js/main.js"></script>
+    <script src="/js/color-modes.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/sidebars.js"></script>
+  </body>
+</html>

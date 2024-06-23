@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>Login In</title>
+    
+    <!-- <link href="./public/css/bootstrap.min.css" rel="stylesheet"> -->
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./css/loginStyle.css">
+    
+  </head>
+  
+  <body>
+    
+    <form action="/signin" method="post">
+        <h1>Login</h1>
+        <input type="text" name="email" placeholder="Enter your email">
+        <input type="password" name="password" placeholder="Enter your password">
+        <% if (err_email) { %> 
+          <p class="error-text">Invalid Credentials</p>
+        <% } %>
+        <button type="submit">Login</button>
+        <p>Don't have account? <a href="/signup">Sign Up</a></p>
+      </form>
+    
+    <script src="/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
